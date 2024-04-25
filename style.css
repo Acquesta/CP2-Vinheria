@@ -16,9 +16,9 @@
 }
 
 .container {
-    background-image: linear-gradient( to top, rgba(0, 0, 0, .8), 
-    rgba(0, 0, 0, .3)),
-    url(./images/bg.jpg);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8),
+            rgba(0, 0, 0, .3)),
+        url(./images/bg.jpg);
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -51,7 +51,7 @@
     }
 }
 
-.popup .overlay{
+.popup .overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -62,7 +62,7 @@
     display: none;
 }
 
-.popup .content{
+.popup .content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -75,16 +75,17 @@
     text-align: center;
     box-sizing: border-box;
 
-    & h2{
+    & h2 {
         margin-bottom: 2rem;
     }
 
-    & p{
+    & p {
         width: 50%;
         margin: 0 auto;
         margin-bottom: 2rem;
     }
-    & button{
+
+    & button {
         background-color: #000;
         color: #fff;
         padding: 1rem 2rem;
@@ -94,17 +95,17 @@
     }
 }
 
-.popup.active .overlay{
+.popup.active .overlay {
     display: block;
 }
 
-.popup.active .content{
+.popup.active .content {
     transition: all 300ms ease-in-out;
     transform: translate(-50%, -50%) scale(1);
 }
 
-.popup.active.negado{
-    background-color: #ff0000 ;
+.popup.active.negado {
+    background-color: #ff0000;
 }
 
 
@@ -121,6 +122,7 @@ a {
     font-weight: 600;
     transition: 1.5;
 }
+
 a:hover {
     color: rgb(185, 24, 51);
 }
@@ -129,12 +131,12 @@ a:hover {
     width: 100%;
     height: calc(100vh - 100px);
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 100px;
-    color: var(--color-light); 
-    text-align: center;   
+    color: var(--color-light);
+    text-align: center;
 
 
     & h1 {
@@ -147,7 +149,7 @@ a:hover {
 .btn {
     border: 3px solid #dc143c;
     padding: 8px 30px;
-    background-color:#dc143c;
+    background-color: #dc143c;
     border-radius: 70px;
     transition: background-color .5s;
     margin-top: 10px;
@@ -156,16 +158,129 @@ a:hover {
         background-color: transparent;
     }
 }
+
 .vinhos {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Vertical alignment */
-    justify-content: center; /* Horizontal alignment */
+    align-items: center;
+    /* Vertical alignment */
+    justify-content: center;
+    /* Horizontal alignment */
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
 }
+
 .vinhos:hover {
     background-color: rgba(22, 22, 22, 0.37);
+}
+
+
+
+
+
+
+
+
+
+/************************************** estilização do login ***************************************/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: #323232;
+    border: none;
+}
+
+.container-login {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8),
+            rgba(0, 0, 0, .3)),
+        url(./images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+a,
+label {
+    font-size: .8rem;
+    /* Não fica fixo, ajusta a fonte ao dispositivo */
+}
+
+a:hover {
+    color: #08558B;
+}
+
+/* container-login */
+#login-container {
+    background-color: #FFFF;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 10vh;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* formulario */
+form {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+label,
+input {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    border-bottom: 2px solid #323232;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+input:focus {
+    border-bottom: 2px solid #08558B;
+}
+
+#forgot-pass {
+    text-align: right;
+    display: block;
+}
+
+input[type="submit"] {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: #FFFF;
+    background-color: #08558B;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #1B223C;
+    transition: .5s;
 }

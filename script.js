@@ -16,3 +16,21 @@ function carrinho(){
 function fecharCarrinho() {
     document.getElementById("popup-2").classList.toggle("active");
 }
+
+
+
+
+//*************************** function destinada a parte de login **************************************
+function logar() {
+
+    var login = document.getElementById('login').value;
+    var senha = document.getElementById('senha').value;
+
+    if (login == "1234" && senha == "1234") {
+        alert('Login realizado com sucesso!!');
+        location.href = "index.html";
+    } else {
+        alert('Usuário ou senha incorretos, tente novamente.');
+    }
+
+}

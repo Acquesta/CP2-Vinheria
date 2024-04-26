@@ -1,21 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Sedan:ital@0;1&display=swap');
-
-:root {
-    --padding_Lateral: 2rem;
-    --color_bg: #121212;
-    --color_text: #fff;
-    --font_title: 'Inria Serif', serif;
-    --font_text: 'Sedan', sans-serif;
-    --color_bg_card: #212121;
+html, body {
+    height: 100%;
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container {
+.vertical-center {
+    min-height: 90%;
+    display: flex;
+    align-items: center;
     background-image: linear-gradient(to top, rgba(0, 0, 0, .8),
             rgba(0, 0, 0, .3)),
         url(./images/bg.jpg);
@@ -25,32 +14,38 @@
     width: 100%;
 }
 
-.hotbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-
-    & .hotbar__itens {
-        & li {
-            margin-right: 2rem;
-            cursor: pointer;
-            padding: .5rem 1.5rem;
-            border-radius: 10px;
-            transition: .3s;
-
-            &:hover {
-                background-color: #212121;
-                color: #fff;
-            }
-        }
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        list-style: none;
-    }
+.card-img-top {
+    height: 200px; /* Defina a altura desejada para as imagens */
+    object-fit: cover; /* Ajusta a imagem para preencher o espaço, mantendo a proporção */
 }
 
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+.container-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8),
+            rgba(0, 0, 0, .3)),
+        url(./images/vinicola.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+label{
+    color: #fff;
+}
 .popup .overlay {
     position: fixed;
     top: 0;
@@ -108,84 +103,32 @@
     background-color: #ff0000;
 }
 
-
-header {
-    width: 100%;
-    height: 100px;
-    padding: 0 30px;
-    align-items: center;
+h3{
+    font-size: 20px;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    transition: 1.5;
+.textocupom{
+    color: #000;
 }
 
-a:hover {
-    color: rgb(185, 24, 51);
+.total{
+    font-weight: bold;
+
 }
 
-.hero {
-    width: 100%;
-    height: calc(100vh - 100px);
+
+/* Código de desconto */
+.desconto{
+    font-weight: bold;
+    font-size: 12px;
+    opacity: 80%;
+    letter-spacing: 1px;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 100px;
-    color: var(--color-light);
-    text-align: center;
-
-
-    & h1 {
-        font-size: clamp(20px, 4vw, 40px);
-        justify-content: center;
-        color: white
-    }
 }
 
-.btn {
-    border: 3px solid #dc143c;
-    padding: 8px 30px;
-    background-color: #dc143c;
-    border-radius: 70px;
-    transition: background-color .5s;
-    margin-top: 10px;
-
-    &:hover {
-        background-color: transparent;
-    }
-}
-
-.vinhos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Vertical alignment */
-    justify-content: center;
-    /* Horizontal alignment */
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.vinhos:hover {
-    background-color: rgba(22, 22, 22, 0.37);
-}
-
-
-
-
-
-
-
-
-/************************************** estilização do login ***************************************/
-
-
+/* PARA A PÁGINA DE LOGIN */
 * {
     margin: 0;
     padding: 0;
@@ -282,69 +225,4 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #1B223C;
     transition: .5s;
-}
-
-
-/************************************** estilização do formulario de contato ***************************************/
-
-* {
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-}
-
-
-.container-form {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, .8),
-            rgba(0, 0, 0, .3)),
-        url(./images/vinicola.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-}
-
-.h1form {
-    text-align: center;
-    color: var(--color_text);
-    padding: 50px;
-    font-size: 38px;
-}
-.form2 {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    width: 500px;
-    margin: 0 auto;
-    backdrop-filter: blur(6px);
-
-}
-
-.lab {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: var(--color_text);
-    font-size: 18px;
-}
-
-.inputform,
-select,
-.textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    margin: 10px 0;
-}
-
-button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #fff;
-    font-size: 1.1rem;
-    cursor: pointer;
-
 }

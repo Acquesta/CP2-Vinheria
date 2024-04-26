@@ -183,7 +183,6 @@ a:hover {
 
 
 
-
 /************************************** estilização do login ***************************************/
 
 
@@ -283,4 +282,69 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #1B223C;
     transition: .5s;
+}
+
+
+/************************************** estilização do formulario de contato ***************************************/
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+
+.container-form {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8),
+            rgba(0, 0, 0, .3)),
+        url(./images/vinicola.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.h1form {
+    text-align: center;
+    color: var(--color_text);
+    padding: 50px;
+    font-size: 38px;
+}
+.form2 {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 500px;
+    margin: 0 auto;
+    backdrop-filter: blur(6px);
+
+}
+
+.lab {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--color_text);
+    font-size: 18px;
+}
+
+.inputform,
+select,
+.textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+
 }

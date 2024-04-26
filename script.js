@@ -34,3 +34,20 @@ function logar() {
     }
 
 }
+
+//*************************** function destinada ao formulario de contato **************************************
+function enviar() {
+
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var message = document.getElementById('message').value;
+
+    if (name == "" || email == "" || phone == "" || message == " ") {
+        alert('Preencha os campos em branco, por favor!');
+        return
+    } else {
+        alert('Mensagem enviada com sucesso!');
+    }
+
+}

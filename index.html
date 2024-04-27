@@ -52,12 +52,56 @@
             </div>
         </div>
     </div>
+
     <div class="popup" id="popup-2">
         <div class="overlay">
             <div class="content">
-                <h2>Adicionado ao carrinho</h2>
-                <button onclick="fecharCarrinho()">Ok!</button>
+                <div class="comentarios">
+                    <h3 class="comentarios__title">Comentarios</h3>
+                    <button onclick="comentarios()">Fechar</button>
+                </div>
+                <div class="comentarios__itens">
+                    <div class="comentario">
+                        <div class="comentario__top">
+                            <h4 class="nome">Lorenzo</h4>
+                            <div class="avaliacoes">
+                                <ul class="avaliacao">
+                                    <li class="star-icon ativo" data-avaliacao="1"></li>
+                                    <li class="star-icon" data-avaliacao="2"></li>
+                                    <li class="star-icon" data-avaliacao="3"></li>
+                                    <li class="star-icon" data-avaliacao="4"></li>
+                                    <li class="star-icon" data-avaliacao="5"></li>      
+                                  </ul>
+                            </div>
+                            <span class="avaliacao__resultado" id="avaliacao">1.0</span>
+                        </div>
+                        <div class="comentario__texto">
+                            <h5>Comentário</h5>
+                            <p>LROESSD ipsum dolor sit amet consectetur adipisicing elit. Fugit facilis, consectetur illo praesentium, maiores est numquam repellat ratione, incidunt ea nisi explicabo soluta quod eum magnam? Et quisquam incidunt inventore.</p>
+                        </div>
+                    </div>
+                    <div class="comentario">
+                        <div class="comentario__top">
+                            <h4 class="nome">Lorenzo</h4>
+                            <div class="avaliacoes">
+                                <ul class="avaliacao">
+                                    <li class="star-icon ativo" data-avaliacao="1"></li>
+                                    <li class="star-icon" data-avaliacao="2"></li>
+                                    <li class="star-icon" data-avaliacao="3"></li>
+                                    <li class="star-icon" data-avaliacao="4"></li>
+                                    <li class="star-icon" data-avaliacao="5"></li>      
+                                  </ul>
+                            </div>
+                            <span class="avaliacao__resultado" id="avaliacao">1.0</span>
+                        </div>
+                        <div class="comentario__texto">
+                            <h5>Comentário</h5>
+                            <p>LROESSD ipsum dolor sit amet consectetur adipisicing elit. Fugit facilis, consectetur illo praesentium, maiores est numquam repellat ratione, incidunt ea nisi explicabo soluta quod eum magnam? Et quisquam incidunt inventore.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
         </div>
     </div>
     
@@ -71,7 +115,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Vinho Carignan</h5>
                             <p>R$ 10,00</p>
-                            <button onclick="adicionarValor(10)" class="btn btn-warning w-100">Comprar</button>
+                            <button onclick="adicionarValor(10)" class="btn btn-warning w-100 ">Comprar</button>
+                            <button onclick="comentarios('vinho1')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
                         </div>
                     </div>
                 </div>
@@ -79,9 +124,10 @@
                     <div class="card">
                         <img src="./vinhos/Vinho2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Vinho CChardonnay</h5>
+                            <h5 class="card-title">Vinho Chardonnay</h5>
                             <p>R$ 20,00</p>
                             <button onclick="adicionarValor(20)" class="btn btn-warning w-100">Comprar</button>
+                            <button onclick="comentarios('vinho1')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
                         </div>
                     </div>
                 </div>
@@ -92,6 +138,7 @@
                             <h5 class="card-title">La Linda Malbec</h5>
                             <p>R$ 30,00</p>
                             <button onclick="adicionarValor(30)" class="btn btn-warning w-100">Comprar</button>
+                            <button onclick="comentarios('vinho1')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
                         </div>
                     </div>
                 </div>
@@ -102,6 +149,7 @@
                             <h5 class="card-title">Chilano Pink Moscato</h5>
                             <p>R$ 40,00</p>
                             <button onclick="adicionarValor(40)" class="btn btn-warning w-100">Comprar</button>
+                            <button onclick="comentarios('vinho1')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
                         </div>
                     </div>
                 </div>
@@ -115,7 +163,7 @@
                                     <label class="textocupom" for="cupomInput">Cupom de Desconto: </label>
                                     <input type="text" class="form-control mb-0" id="cupom" placeholder="Digite o cupom">
                                     <button onclick="aplicarDesconto()" class="btn btn-outline-success btn-sm mt-2" >Aplicar Cupom</button>
-                                    <p class="desconto">Cupom para 50% de desconto: agnello50</p>
+                                    <p class="desconto">Cupom para 10% de desconto: FIAP2024 </p>
                                     <button onclick="limparDados()" class="btn btn-outline-info w-100 ">Reiniciar Processo para teste</button>
                                 </div>
                             </div>

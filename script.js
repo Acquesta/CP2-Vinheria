@@ -1,3 +1,5 @@
+// ABRIR E FECHAR POPUP +18
+
 function togglePopup(){
     document.getElementById("popup-1").classList.toggle("active");
 }
@@ -9,15 +11,40 @@ function blockSite(){
     window.location.href = "https://www.google.com/"
 }
 
-function carrinho(){
+// ABRIR POPUP COMENTÁRIOS
+
+function comentarios() {
     document.getElementById("popup-2").classList.toggle("active");
 }
 
-function fecharCarrinho() {
-    document.getElementById("popup-2").classList.toggle("active");
-}
+// AVALIAÇÃO COMENTARIO
+
+var stars = document.querySelectorAll('.star-icon');
+var nota = document.getElementById('avaliacao')
+                  
+document.addEventListener('click', (e) => {
+    console.warn(e.target)
+    console.warn(stars);
+
+    stars.forEach((item) => {
+        if (e.target == item){
+            var classStar = e.target.classList;
+            if(!classStar.contains('ativo')){
+                stars.forEach((star) => {
+                star.classList.remove('ativo');
+                });
+            classStar.add('ativo');
+            var avaliacao = e.target.getAttribute('data-avaliacao')
+            console.log(avaliacao);
+            nota.innerHTML = avaliacao + ".0"
+        }
+
+        }
+    });
+});
 
 //PÁGINA DE LOGIN
+
 function logar() {
 
     var login = document.getElementById('login').value;
@@ -34,6 +61,7 @@ function logar() {
 
 
 // VALOR E CUPOM DE DESCONTO
+
 let total = 0;
 let cupomUtilizado = false; // Variável para controlar se o cupom já foi utilizado
 
@@ -49,10 +77,10 @@ function aplicarDesconto() {
     }
     
     const cupom = document.getElementById('cupom').value;
-    if (cupom === 'agnello50') {
-        total *= 0.5; // Aplica desconto de 50%
+    if (cupom === 'FIAP2024 ') {
+        total = total - (0.1 * total); // Aplica desconto de 10%
         document.getElementById('total').textContent = `R$ ${total.toFixed(2)}`;
-        alert('Desconto de 50% aplicado com sucesso!');
+        alert('Desconto de 10% aplicado com sucesso!');
         cupomUtilizado = true; // Marca o cupom como utilizado
     } else {
         alert('Cupom inválido.');

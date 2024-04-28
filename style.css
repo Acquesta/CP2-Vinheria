@@ -314,7 +314,7 @@ input[type="submit"]:hover {
 /* Pagina de sugestões*/
 .sugestoes {
     width: 80%;
-    min-height: 100vh;
+    height: 80vh;
     margin: 40px auto;
 }
 .sugestoes h1{

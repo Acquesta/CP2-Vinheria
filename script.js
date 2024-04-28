@@ -1,3 +1,74 @@
+var vinhos = [
+    {
+        id: '1',
+        nome: "Vinho Carignan",
+        imagem: "imagens/Vinho1.jpg",
+        descricao: "Vinho 1",
+        preco: 10,
+        quantidade: 0,
+        valorTotal: 0,
+        comentarios: [
+            {
+                id: '1',
+                nome: 'Teste',
+                avaliacao: 0,
+                comentario: 'Lorem impsum dolor'
+            }
+        ]
+    },
+    {
+        id: '2',
+        nome: "Vinho Chardonnay",
+        imagem: "imagens/Vinho2.jpg",
+        descricao: "Vinho 2",
+        preco: 20,
+        quantidade: 0,
+        valorTotal: 0,
+        comentarios: [
+            {
+                id: '2',
+                nome: 'Teste',
+                avaliacao: 0,
+                comentario: 'Lorem impsum dolor'
+            }
+        ]
+    },
+    {
+        id: '3',
+        nome: "La Linda Malbec",
+        imagem: "imagens/Vinho3.jpg",
+        descricao: "Vinho 3",
+        preco: 30,
+        quantidade: 0,
+        valorTotal: 0,
+        comentarios: [
+            {
+                id: '3',
+                nome: 'Teste',
+                avaliacao: 0,
+                comentario: 'Lorem impsum dolor'
+            }
+        ]
+    },
+    {
+        id: '4',
+        nome: "Chilano Pink Moscato",
+        imagem: "imagens/Vinho4.jpg",
+        descricao: "Vinho 4",
+        preco: 40,
+        quantidade: 0,
+        valorTotal: 0,
+        comentarios: [
+            {
+                id: '4',
+                nome: 'Teste',
+                avaliacao: 0,
+                comentario: 'Lorem impsum dolor'
+            }
+        ]
+    },
+]
+
 // ABRIR E FECHAR POPUP +18
 
 function togglePopup(){
@@ -23,9 +94,6 @@ var stars = document.querySelectorAll('.star-icon');
 var nota = document.getElementById('avaliacao')
                   
 document.addEventListener('click', (e) => {
-    console.warn(e.target)
-    console.warn(stars);
-
     stars.forEach((item) => {
         if (e.target == item){
             var classStar = e.target.classList;
@@ -61,21 +129,28 @@ function logar() {
 
 
 // VALOR E CUPOM DE DESCONTO
-
-let total = 0;
+let total = document.getElementById('total')
 let cupomUtilizado = false; // Variável para controlar se o cupom já foi utilizado
+let totalCompra = 0;
 
-function adicionarValor(valor) {
-    total += valor;
-    document.getElementById('total').textContent = `R$ ${total.toFixed(2)}`;
-    mudarCombinacao(valor)
+function adicionarValor(id) {
+    totalCompra = 0;
+    vinhos.forEach(vinho =>  {
+        if (vinho.id == id) {
+            var qtd = parseInt(prompt('Qual a quantidade de vihos que você quer ?', '1'))
+            vinho.quantidade += qtd;
+            vinho.valorTotal = vinho.quantidade * vinho.preco;
+            mudarCombinacao(vinho.preco)
+        }
+        totalCompra += vinho.valorTotal
+    })
+    total.innerHTML = `R$ ${totalCompra}`;
 }
 function mudarCombinacao(vinho){
     let listacombinacao = document.getElementById("wine-list")
-console.log(vinho);
     switch(vinho){
         case 10:
-            console.log(listacombinacao);
+            // console.log(listacombinacao);
             listacombinacao.innerHTML='<div class="wines-item"> <img src="images/combinacoes/1.png" alt="vinho Carignan"> <h3>Cassoulet: </h3> <p>Um clássico francês com feijão branco, carne de porco, linguiça e pato, harmoniza perfeitamente com os taninos robustos e aromas terrosos do Carignan.</p> </a></div><!--fim 1 vinho--><!--2 vinho--><div class="wines-item"><img src="images/combinacoes/2.png" alt="vinho Chardonnay"><h3>Costeletas de Cordeiro com Alecrim e Tomilho: </h3><p>A carne suculenta de cordeiro complementa os sabores frutados do Carignan, enquanto as ervas frescas realçam as notas terrosas do vinho.</p></div><!--3 vinho--><div class="wines-item"><img src="images/combinacoes/3.png" alt="La Linda Malbec"><h3>Queijo Gruyère: </h3><p> A cremosidade e o sabor intenso do Gruyère se equilibram com os taninos firmes e o final persistente do Carignan.</p></div>'
             break;
         case 20:
@@ -98,9 +173,10 @@ function aplicarDesconto() {
     }
     
     const cupom = document.getElementById('cupom').value;
-    if (cupom === 'FIAP2024 ') {
-        total = total - (0.1 * total); // Aplica desconto de 10%
-        document.getElementById('total').textContent = `R$ ${total.toFixed(2)}`;
+    if (cupom === 'FIAP2024') {
+        console.log(total);
+        totalCompra = totalCompra - (0.1 * totalCompra); // Aplica desconto de 10%
+        document.getElementById('total').textContent = `R$ ${totalCompra}`;
         alert('Desconto de 10% aplicado com sucesso!');
         cupomUtilizado = true; // Marca o cupom como utilizado
     } else {

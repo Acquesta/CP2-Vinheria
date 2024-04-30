@@ -1,6 +1,4 @@
-
 # CP2 WEB DEVELOPMENT
-# CP2 - Projeto Vinheria
 
 ## Objetivo
 Este projeto visa implementar recursos em JavaScript para um site de uma vinheria, oferecendo diversas funcionalidades, desde a verificação da idade do usuário até a sugestão de combinações de comidas baseadas nos vinhos escolhidos.

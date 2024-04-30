@@ -58,9 +58,9 @@
             <div class="content">
                 <div class="comentarios">
                     <h3 class="comentarios__title">Comentarios</h3>
-                    <button onclick="comentarios()">Fechar</button>
+                    <button class="comentarios__button" onclick="comentarios()">Fechar</button>
                 </div>
-                <div class="comentarios__itens">
+                <div class="comentarios__itens" id="listaComentario">
                     
                     <div class="comentario">
                         <div class="comentario__top">
@@ -72,7 +72,7 @@
                                     <li class="star-icon" data-avaliacao="3"></li>
                                     <li class="star-icon" data-avaliacao="4"></li>
                                     <li class="star-icon" data-avaliacao="5"></li>      
-                                  </ul>
+                                </ul>
                             </div>
                             <span class="avaliacao__resultado" id="avaliacao">1.0</span>
                         </div>
@@ -95,10 +95,15 @@
                     <div class="card">
                         <img src="./vinhos/Vinho1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Vinho Carignan</h5>
+                            <div class="card-body__top">
+                                <h5 class="card-title">Vinho Carignan</h5>
+                                <svg data-coracao="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" id="coracao">
+                                    <path data-coracao="1" id="coracao" fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                                </svg>
+                            </div>
                             <p>R$ 10,00</p>
                             <button onclick="adicionarValor('1')" class="btn btn-warning w-100 ">Comprar</button>
-                            <button onclick="comentarios('vinho1')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
+                            <button onclick="comentarios('1')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
                         </div>
                     </div>
                 </div>
@@ -106,10 +111,16 @@
                     <div class="card">
                         <img src="./vinhos/Vinho2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Vinho Chardonnay</h5>
+                            <div class="card-body__top">
+                                <h5 class="card-title">Vinho Chardonna</h5>
+                                <svg data-coracao="2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" id="coracao">
+                                    <path data-coracao="2" id="coracao" fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                                  </svg>
+                            </div>
+                            
                             <p>R$ 20,00</p>
                             <button onclick="adicionarValor('2')" class="btn btn-warning w-100">Comprar</button>
-                            <button onclick="comentarios('vinho1')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
+                            <button onclick="comentarios('2')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
                         </div>
                     </div>
                 </div>
@@ -117,10 +128,16 @@
                     <div class="card">
                         <img src="./vinhos/Vinho3.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">La Linda Malbec</h5>
+                            <div class="card-body__top">
+                                <h5 class="card-title">La Linda Malbec</h5>
+                                <svg data-coracao="3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" id="coracao">
+                                    <path data-coracao="3" id="coracao" fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                                  </svg>
+                            </div>
+                            
                             <p>R$ 30,00</p>
                             <button onclick="adicionarValor('3')" class="btn btn-warning w-100">Comprar</button>
-                            <button onclick="comentarios('vinho1')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
+                            <button onclick="comentarios('3')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
                         </div>
                     </div>
                 </div>
@@ -128,10 +145,16 @@
                     <div class="card">
                         <img src="./vinhos/Vinho4.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Chilano Pink Moscato</h5>
+                            <div class="card-body__top">
+                                <h5 class="card-title">Chilano Pink Moscato</h5>
+                                <svg data-coracao="4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" id="coracao">
+                                    <path data-coracao="4" id="coracao" fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                                  </svg>
+                            </div>
+                            
                             <p>R$ 40,00</p>
                             <button onclick="adicionarValor('4')" class="btn btn-warning w-100">Comprar</button>
-                            <button onclick="comentarios('vinho1')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
+                            <button onclick="comentarios('4')" class="btn btn-outline-warning w-100 p-10">Comentarios</button>
                         </div>
                     </div>
                 </div>

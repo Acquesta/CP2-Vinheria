@@ -7,14 +7,7 @@ var vinhos = [
         preco: 10,
         quantidade: 0,
         valorTotal: 0,
-        comentarios: [
-            {
-                id: '1',
-                nome: 'Teste',
-                avaliacao: 0,
-                comentario: 'Lorem impsum dolor'
-            }
-        ]
+        favorito: false
     },
     {
         id: '2',
@@ -24,14 +17,7 @@ var vinhos = [
         preco: 20,
         quantidade: 0,
         valorTotal: 0,
-        comentarios: [
-            {
-                id: '2',
-                nome: 'Teste',
-                avaliacao: 0,
-                comentario: 'Lorem impsum dolor'
-            }
-        ]
+        favorito: false
     },
     {
         id: '3',
@@ -41,14 +27,7 @@ var vinhos = [
         preco: 30,
         quantidade: 0,
         valorTotal: 0,
-        comentarios: [
-            {
-                id: '3',
-                nome: 'Teste',
-                avaliacao: 0,
-                comentario: 'Lorem impsum dolor'
-            }
-        ]
+        favorito: false
     },
     {
         id: '4',
@@ -58,14 +37,6 @@ var vinhos = [
         preco: 40,
         quantidade: 0,
         valorTotal: 0,
-        comentarios: [
-            {
-                id: '4',
-                nome: 'Teste',
-                avaliacao: 0,
-                comentario: 'Lorem impsum dolor'
-            }
-        ]
     },
 ]
 
@@ -84,7 +55,7 @@ function blockSite(){
 
 // ABRIR POPUP COMENTÁRIOS
 
-function comentarios() {
+function comentarios(vinho) {
     document.getElementById("popup-2").classList.toggle("active");
 }
 
@@ -111,6 +82,7 @@ document.addEventListener('click', (e) => {
     });
 });
 
+
 //PÁGINA DE LOGIN
 
 function logar() {
@@ -126,6 +98,20 @@ function logar() {
     }
 
 }
+
+// MUDAR COR CORAÇÃO
+
+const coracoes = document.querySelectorAll('#coracao');
+
+document.addEventListener('click', (e) =>{
+    var dataCoracao = e.target.getAttribute('data-coracao')
+    coracoes.forEach((coracao) => {
+        if(coracao.getAttribute('data-coracao') == dataCoracao){
+            coracao.classList.toggle('coracao-fill')    
+        }
+        
+    })
+})
 
 
 // VALOR E CUPOM DE DESCONTO
@@ -172,8 +158,8 @@ function aplicarDesconto() {
         return;
     }
     
-    const cupom = document.getElementById('cupom').value;
-    if (cupom === 'FIAP2024') {
+    const cupom = document.getElementById('cupom');
+    if (cupom.value === 'FIAP2024') {
         console.log(total);
         totalCompra = totalCompra - (0.1 * totalCompra); // Aplica desconto de 10%
         document.getElementById('total').textContent = `R$ ${totalCompra}`;

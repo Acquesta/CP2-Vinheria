@@ -131,6 +131,25 @@ h3{
     align-items: center;
 }
 
+.card-body__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-body__top svg{
+    min-width: 80px ;
+}
+
+.card-body__top svg:hover{
+    cursor: pointer;
+    fill: #ff0000;
+}
+
+.coracao-fill{
+    fill: #ff0000;
+}
+
 /* Comentário */
 
 .comentario{
@@ -199,6 +218,13 @@ h3{
 .star-icon:hover ~ .star-icon::before{
     
     content: "\2606";
+}
+
+/* Criar comentário */
+
+.criar__comentario{
+    width: 100%;
+    margin-top: 10px;
 }
 
 /* Código de desconto */
